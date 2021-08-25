@@ -14,11 +14,6 @@ class HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(title: Text('Talon of Legends')),
       body: LoginPage(),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.login),
-        onPressed: () {},
-      ),
-      // ignore: dead_code
     );
   }
 }

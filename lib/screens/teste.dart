@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({Key? key}) : super(key: key);
+class TestePage extends StatefulWidget {
+  const TestePage({Key? key}) : super(key: key);
 
   @override
-  _LoginPageState createState() => _LoginPageState();
+  _TestePageState createState() => _TestePageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _TestePageState extends State<TestePage> {
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -23,11 +23,6 @@ class _LoginPageState extends State<LoginPage> {
                 decoration: InputDecoration(
                     labelText: 'E-mail', border: OutlineInputBorder()),
                 keyboardType: TextInputType.emailAddress,
-              ),
-              TextField(
-                obscureText: true,
-                decoration: InputDecoration(
-                    labelText: 'Senha', border: OutlineInputBorder()),
               ),
             ],
           ),
