@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'login.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -13,11 +14,9 @@ class HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Talon of Legends')
-      ),
-      
-     
-      floatingActionButton: FloatingActionButton (
+        title: Text('Talon of Legends')),
+        body: LoginPage(),
+          floatingActionButton: FloatingActionButton (
         child: Icon(Icons.login),
         onPressed: (){},
       ),
@@ -25,3 +24,4 @@ class HomePageState extends State<HomePage> {
           );
   }
   }
+  
