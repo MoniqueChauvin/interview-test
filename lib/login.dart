@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
-  const LoginPage({ Key? key }) : super(key: key);
+  const LoginPage({Key? key}) : super(key: key);
 
   @override
   _LoginPageState createState() => _LoginPageState();
@@ -14,28 +14,25 @@ class _LoginPageState extends State<LoginPage> {
       child: SizedBox(
         width: double.infinity,
         height: double.infinity,
-          child: Padding(
-            padding: const EdgeInsets.all(15.0),
-            child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-            TextField(
-              decoration: InputDecoration(
-                labelText: 'E-mail',
-                border: OutlineInputBorder()),
-            ),TextField(
-              decoration: InputDecoration(
-                labelText: 'Senha',
-                border: OutlineInputBorder()),
-            ),
-            
-        ],
-      
-      ),
+        child: Padding(
+          padding: const EdgeInsets.all(15.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              TextField(
+                decoration: InputDecoration(
+                    labelText: 'E-mail', border: OutlineInputBorder()),
+                keyboardType: TextInputType.emailAddress,
+              ),
+              TextField(
+                obscureText: true,
+                decoration: InputDecoration(
+                    labelText: 'Senha', border: OutlineInputBorder()),
+              ),
+            ],
           ),
-
+        ),
       ),
-      
     );
   }
 }

@@ -6,22 +6,19 @@ class HomePage extends StatefulWidget {
   State<HomePage> createState() {
     return HomePageState();
   }
-  
 }
+
 class HomePageState extends State<HomePage> {
-  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Talon of Legends')),
-        body: LoginPage(),
-          floatingActionButton: FloatingActionButton (
+      appBar: AppBar(title: Text('Talon of Legends')),
+      body: LoginPage(),
+      floatingActionButton: FloatingActionButton(
         child: Icon(Icons.login),
-        onPressed: (){},
+        onPressed: () {},
       ),
-          // ignore: dead_code
-          );
+      // ignore: dead_code
+    );
   }
-  }
-  
+}
