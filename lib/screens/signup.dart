@@ -12,6 +12,12 @@ class _SignUpPageState extends State<SignUpPage> {
   var maskFormatter = new MaskTextInputFormatter(
       mask: '##/##/####', filter: {"#": RegExp(r'[0-9]')});
 
+  String _senha = '';
+  String _datadenascimento = '';
+  String _confirmacaosenha = '';
+  String _nomedeinvocador = '';
+  String _email = '';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,6 +37,9 @@ class _SignUpPageState extends State<SignUpPage> {
                         labelText: 'E-mail', border: OutlineInputBorder()),
                     keyboardType: TextInputType.emailAddress,
                     textInputAction: TextInputAction.next,
+                    onChanged: (value) {
+                      _email = value;
+                    },
                   ),
                   SizedBox(
                     height: 16,
@@ -40,6 +49,9 @@ class _SignUpPageState extends State<SignUpPage> {
                         labelText: 'Senha', border: OutlineInputBorder()),
                     textInputAction: TextInputAction.next,
                     obscureText: true,
+                    onChanged: (value) {
+                      _senha = value;
+                    },
                   ),
                   SizedBox(
                     height: 16,
@@ -50,6 +62,9 @@ class _SignUpPageState extends State<SignUpPage> {
                         border: OutlineInputBorder()),
                     textInputAction: TextInputAction.next,
                     obscureText: true,
+                    onChanged: (value) {
+                      _confirmacaosenha = value;
+                    },
                   ),
                   SizedBox(
                     height: 16,
@@ -60,6 +75,9 @@ class _SignUpPageState extends State<SignUpPage> {
                         border: OutlineInputBorder()),
                     keyboardType: TextInputType.name,
                     textInputAction: TextInputAction.next,
+                    onChanged: (value) {
+                      _nomedeinvocador = value;
+                    },
                   ),
                   SizedBox(
                     height: 16,
@@ -71,6 +89,9 @@ class _SignUpPageState extends State<SignUpPage> {
                     inputFormatters: [maskFormatter],
                     keyboardType: TextInputType.datetime,
                     textInputAction: TextInputAction.done,
+                    onChanged: (value) {
+                      _datadenascimento = value;
+                    },
                   ),
                 ],
               ),
