@@ -24,6 +24,25 @@ class _TestePageState extends State<TestePage> {
                     labelText: 'E-mail', border: OutlineInputBorder()),
                 keyboardType: TextInputType.emailAddress,
               ),
+              TextField(
+                decoration: InputDecoration(
+                    labelText: 'Senha', border: OutlineInputBorder()),
+                textInputAction: TextInputAction.done,
+                obscureText: true,
+              ),
+              TextField(
+                decoration: InputDecoration(
+                    labelText: 'Confirme sua senha',
+                    border: OutlineInputBorder()),
+                textInputAction: TextInputAction.done,
+                obscureText: true,
+              ),
+              TextField(
+                decoration: InputDecoration(
+                    labelText: 'Nome de invocador',
+                    border: OutlineInputBorder()),
+                keyboardType: TextInputType.name,
+              ),
             ],
           ),
         ),
