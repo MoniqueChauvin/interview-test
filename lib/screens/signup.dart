@@ -93,6 +93,17 @@ class _SignUpPageState extends State<SignUpPage> {
                       _datadenascimento = value;
                     },
                   ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  ElevatedButton(
+                    style: ButtonStyle(
+                      backgroundColor:
+                          MaterialStateProperty.all<Color>(Colors.pink),
+                    ),
+                    onPressed: () {},
+                    child: const Text('Confirmar'),
+                  )
                 ],
               ),
             ),
