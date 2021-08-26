@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/screens/teste.dart';
+import 'package:flutter_application_1/screens/signup.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -74,7 +74,7 @@ class _LoginPageState extends State<LoginPage> {
                         } else {
                           Navigator.of(context).push(
                             MaterialPageRoute(
-                              builder: (context) => TestePage(),
+                              builder: (context) => SignUpPage(),
                             ),
                           );
                         }
@@ -89,7 +89,12 @@ class _LoginPageState extends State<LoginPage> {
                         backgroundColor: MaterialStateProperty.all<Color>(
                             Colors.grey.shade800),
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => SignUpPage(),
+                            ),
+                          );},
                       child: const Text('Cadastrar'),
                     ),
                   ],
