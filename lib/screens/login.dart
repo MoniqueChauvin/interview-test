@@ -78,18 +78,11 @@ class _LoginPageState extends State<LoginPage> {
                           MaterialStateProperty.all<Color>(Colors.pink),
                     ),
                     onPressed: () {
-                      if (_email == '' || _senha == '') {
-                        setState(() {
-                          error = "Use um usuario e senha válidos ou cadastre-se";
-                        });
-                        return;
-                      } else {
-                        Navigator.of(context).push(
-                          MaterialPageRoute(
-                            builder: (context) => SignUpPage(),
-                          ),
-                        );
-                      }
+                      setState(() {
+                        error =
+                            "Use um usuario e senha válidos ou cadastre-se!";
+                      });
+                      return;
                     },
                     child: const Text('Entrar'),
                   ),

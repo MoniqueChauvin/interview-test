@@ -19,7 +19,7 @@ class _SignUpPageState extends State<SignUpPage> {
   String nomedeinvocador = '';
   String emailcadastro = '';
   String error = '';
-
+  String regiao = 'NA';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -93,10 +93,26 @@ class _SignUpPageState extends State<SignUpPage> {
                         border: OutlineInputBorder()),
                     inputFormatters: [maskFormatter],
                     keyboardType: TextInputType.datetime,
-                    textInputAction: TextInputAction.done,
+                    textInputAction: TextInputAction.next,
                     onChanged: (value) {
                       datadenascimento = value;
                     },
+                  ),
+                  DropdownButton<String>(
+                    hint: Text('Região'),
+                    items: <String>['BR', 'EU', 'NA'].map((String value) {
+                      return DropdownMenuItem<String>(
+                        value: value,
+                        child: new Text(value),
+                      );
+                    }).toList(),
+                    style: const TextStyle(color: Colors.white),
+                    onChanged: (String? value) {
+                      setState(() {
+                        regiao = value!;
+                      });
+                    },
+                    value: regiao,
                   ),
                   SizedBox(
                     height: 10,
@@ -116,8 +132,12 @@ class _SignUpPageState extends State<SignUpPage> {
                       } else {
                         Navigator.of(context).push(
                           MaterialPageRoute(
-                            builder: (context) => DashBoardPage(email: emailcadastro,
-                             nick: nomedeinvocador,),
+                            builder: (context) => DashBoardPage(
+                              email: emailcadastro,
+                              nick: nomedeinvocador,
+                              dataNascimento: datadenascimento,
+                              regiao: regiao,
+                            ),
                           ),
                         );
                       }

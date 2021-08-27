@@ -3,7 +3,15 @@ import 'package:flutter/material.dart';
 class DashBoardPage extends StatefulWidget {
   final String email;
   final String nick;
-  const DashBoardPage({Key? key, required this.email, required this.nick})
+  final String dataNascimento;
+  final String regiao;
+
+  const DashBoardPage(
+      {Key? key,
+      required this.email,
+      required this.nick,
+      required this.dataNascimento,
+      required this.regiao})
       : super(key: key);
 
   @override
@@ -31,7 +39,7 @@ class _DashBoardPageState extends State<DashBoardPage> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              widget.nick,
+                              widget.regiao + ' - ' + widget.nick,
                               style: TextStyle(fontSize: 30),
                             ),
                             Text(
@@ -59,7 +67,7 @@ class _DashBoardPageState extends State<DashBoardPage> {
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Icon(Icons.email, color: Colors.black),
+                      Icon(Icons.email, color: Colors.pink),
                       SizedBox(
                         width: 10,
                       ),
@@ -73,6 +81,27 @@ class _DashBoardPageState extends State<DashBoardPage> {
                           Text(widget.email),
                         ],
                       ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 15,
+                  ),
+                  Row(
+                    children: [
+                      Icon(Icons.calendar_today, color: Colors.pink),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Data de nascimento",
+                            style: TextStyle(fontSize: 20, color: Colors.pink),
+                          ),
+                          Text(widget.dataNascimento),
+                        ],
+                      )
                     ],
                   )
                 ],
