@@ -101,7 +101,11 @@ class _SignUpPageState extends State<SignUpPage> {
                       backgroundColor:
                           MaterialStateProperty.all<Color>(Colors.pink),
                     ),
-                    onPressed: () {},
+                    onPressed: () {Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => SignUpPage(),
+                        ),
+                      );},
                     child: const Text('Confirmar'),
                   )
                 ],
