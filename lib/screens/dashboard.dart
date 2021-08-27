@@ -12,7 +12,7 @@ class _DashBoardPageState extends State<DashBoardPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(title: Text('Bem Vindo! :)')),
       drawer: Drawer(
         child: ListView(
           children: [

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/screens/dashboard.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
-
-import 'dashboard.dart';
 
 class SignUpPage extends StatefulWidget {
   const SignUpPage({Key? key}) : super(key: key);
@@ -19,6 +18,7 @@ class _SignUpPageState extends State<SignUpPage> {
   String confirmacaosenha = '';
   String nomedeinvocador = '';
   String email = '';
+  String error = '';
 
   @override
   Widget build(BuildContext context) {
@@ -71,16 +71,8 @@ class _SignUpPageState extends State<SignUpPage> {
                       confirmacaosenha = value;
                     },
                   ),
-                  ElevatedButton(
-                    style: ButtonStyle(
-                      backgroundColor:
-                          MaterialStateProperty.all<Color>(Colors.pink),
-                    ),
-                    onPressed: () {},
-                    child: const Text('Verificar senhas'),
-                  ),
                   SizedBox(
-                    height: 50,
+                    height: 16,
                   ),
                   TextField(
                     decoration: InputDecoration(
@@ -115,14 +107,29 @@ class _SignUpPageState extends State<SignUpPage> {
                           MaterialStateProperty.all<Color>(Colors.pink),
                     ),
                     onPressed: () {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (context) => DashBoardPage(),
-                        ),
-                      );
+                      if (senha != confirmacaosenha || senha == '') {
+                        setState(() {
+                          error = "Senhas não coincidem";
+                        });
+
+                        return;
+                      } else {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) => DashBoardPage(),
+                          ),
+                        );
+                      }
                     },
-                    child: const Text('Confirmar'),
-                  )
+                    child: const Text('Cadastrar'),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                    error,
+                    style: TextStyle(color: Colors.red),
+                  ),
                 ],
               ),
             ),
