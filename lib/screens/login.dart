@@ -80,7 +80,7 @@ class _LoginPageState extends State<LoginPage> {
                     onPressed: () {
                       if (_email == '' || _senha == '') {
                         setState(() {
-                          error = "Por favor, realize seu cadastro";
+                          error = "Use um usuario e senha validos ou cadastre-se";
                         });
                         return;
                       } else {
