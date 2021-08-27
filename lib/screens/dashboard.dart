@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 
 class DashBoardPage extends StatefulWidget {
-  //final String email;
-  //const DashBoardPage({Key? key, this.email}) : super(key: key);
+  final String email;
+  final String nick;
+  const DashBoardPage({Key? key, required this.email, required this.nick})
+      : super(key: key);
 
   @override
   _DashBoardPageState createState() => _DashBoardPageState();
@@ -12,7 +14,7 @@ class _DashBoardPageState extends State<DashBoardPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Bem Vindo! :)')),
+      appBar: AppBar(centerTitle: true, title: Text('Bem Vindo!')),
       drawer: Drawer(
         child: ListView(
           children: [
@@ -23,26 +25,18 @@ class _DashBoardPageState extends State<DashBoardPage> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Container(
-                      width: 64,
-                      height: 64,
-                      child: Image.network(
-                        'https://icons.iconarchive.com/icons/fazie69/league-of-legends/256/Talon-Dragonblade-icon.png',
-                      ),
-                    ),
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              "Niqy",
-                              style: TextStyle(fontSize: 32),
+                              widget.nick,
+                              style: TextStyle(fontSize: 30),
                             ),
                             Text(
-                              "ID #231045451BR",
-                              style: TextStyle(fontSize: 14),
+                              widget.email,
+                              style: TextStyle(fontSize: 15),
                             ),
                           ],
                         ),
@@ -50,12 +44,39 @@ class _DashBoardPageState extends State<DashBoardPage> {
                     ),
                   ],
                 )),
-            Column(
-              children: [
-                ListTile(
-                  title: Text('Dados da conta'),
-                )
-              ],
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Dados da conta',
+                    style: TextStyle(fontSize: 20),
+                  ),
+                  SizedBox(
+                    height: 16,
+                  ),
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Icon(Icons.email, color: Colors.black),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Email",
+                            style: TextStyle(fontSize: 20, color: Colors.pink),
+                          ),
+                          Text(widget.email),
+                        ],
+                      ),
+                    ],
+                  )
+                ],
+              ),
             ),
           ],
         ),

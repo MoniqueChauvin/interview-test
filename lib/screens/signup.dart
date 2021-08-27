@@ -17,7 +17,7 @@ class _SignUpPageState extends State<SignUpPage> {
   String datadenascimento = '';
   String confirmacaosenha = '';
   String nomedeinvocador = '';
-  String email = '';
+  String emailcadastro = '';
   String error = '';
 
   @override
@@ -43,7 +43,7 @@ class _SignUpPageState extends State<SignUpPage> {
                     keyboardType: TextInputType.emailAddress,
                     textInputAction: TextInputAction.next,
                     onChanged: (value) {
-                      email = value;
+                      emailcadastro = value;
                     },
                   ),
                   SizedBox(
@@ -116,7 +116,8 @@ class _SignUpPageState extends State<SignUpPage> {
                       } else {
                         Navigator.of(context).push(
                           MaterialPageRoute(
-                            builder: (context) => DashBoardPage(),
+                            builder: (context) => DashBoardPage(email: emailcadastro,
+                             nick: nomedeinvocador,),
                           ),
                         );
                       }
