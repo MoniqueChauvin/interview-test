@@ -125,7 +125,7 @@ class _SignUpPageState extends State<SignUpPage> {
                     onPressed: () {
                       if (senha != confirmacaosenha || senha == '') {
                         setState(() {
-                          error = "Senhas não coincidem";
+                          error = "Senhas não coincidem.";
                         });
 
                         return;
