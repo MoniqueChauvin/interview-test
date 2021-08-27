@@ -34,6 +34,9 @@ class _SignUpPageState extends State<SignUpPage> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
+                  SizedBox(
+                    height: 16,
+                  ),
                   TextField(
                     decoration: InputDecoration(
                         labelText: 'E-mail', border: OutlineInputBorder()),
@@ -68,8 +71,16 @@ class _SignUpPageState extends State<SignUpPage> {
                       confirmacaosenha = value;
                     },
                   ),
+                  ElevatedButton(
+                    style: ButtonStyle(
+                      backgroundColor:
+                          MaterialStateProperty.all<Color>(Colors.pink),
+                    ),
+                    onPressed: () {},
+                    child: const Text('Verificar senhas'),
+                  ),
                   SizedBox(
-                    height: 16,
+                    height: 50,
                   ),
                   TextField(
                     decoration: InputDecoration(
@@ -103,11 +114,13 @@ class _SignUpPageState extends State<SignUpPage> {
                       backgroundColor:
                           MaterialStateProperty.all<Color>(Colors.pink),
                     ),
-                    onPressed: () {Navigator.of(context).push(
+                    onPressed: () {
+                      Navigator.of(context).push(
                         MaterialPageRoute(
                           builder: (context) => DashBoardPage(),
                         ),
-                      );},
+                      );
+                    },
                     child: const Text('Confirmar'),
                   )
                 ],
