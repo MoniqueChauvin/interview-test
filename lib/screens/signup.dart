@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
+import 'dashboard.dart';
+
 class SignUpPage extends StatefulWidget {
   const SignUpPage({Key? key}) : super(key: key);
 
@@ -103,7 +105,7 @@ class _SignUpPageState extends State<SignUpPage> {
                     ),
                     onPressed: () {Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => SignUpPage(),
+                          builder: (context) => DashBoardPage(),
                         ),
                       );},
                     child: const Text('Confirmar'),
