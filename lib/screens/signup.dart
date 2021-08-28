@@ -123,7 +123,17 @@ class _SignUpPageState extends State<SignUpPage> {
                           MaterialStateProperty.all<Color>(Colors.pink),
                     ),
                     onPressed: () {
-                      if (senha != confirmacaosenha || senha == '') {
+                      if (senha == '' ||
+                          confirmacaosenha == '' ||
+                          datadenascimento == '' ||
+                          nomedeinvocador == '' ||
+                          emailcadastro == '') {
+                        setState(() {
+                          error = "Preencha todos os campos!";
+                        });
+
+                        return;
+                      } else if (senha != confirmacaosenha || senha == '') {
                         setState(() {
                           error = "Senhas não coincidem.";
                         });
