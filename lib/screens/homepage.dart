@@ -12,11 +12,13 @@ class HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Talon of Legends')),
-      body: LoginPage(),
-    
+      body: LoginPage(
+        emailLogado: '',
+        senhaLogado: '',
+        dataNascimento: '',
+        nick: '',
+        regiao: '',
+      ),
     );
-  
   }
 }
-

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/screens/dashboard.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
+import 'login.dart';
+
 class SignUpPage extends StatefulWidget {
   const SignUpPage({Key? key}) : super(key: key);
 
@@ -144,15 +146,27 @@ class _SignUpPageState extends State<SignUpPage> {
                     } else {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => DashBoardPage(
-                            email: emailcadastro,
-                            nick: nomedeinvocador,
+                          builder: (context) => LoginPage(
+                            emailLogado: emailcadastro,
+                            senhaLogado: senha,
                             dataNascimento: datadenascimento,
+                            nick: nomedeinvocador,
                             regiao: regiao,
                           ),
                         ),
                       );
                     }
+                    //   Navigator.of(context).push(
+                    //     MaterialPageRoute(
+                    //       builder: (context) => DashBoardPage(
+                    //         email: emailcadastro,
+                    //         nick: nomedeinvocador,
+                    //         dataNascimento: datadenascimento,
+                    //         regiao: regiao,
+                    //       ),
+                    //     ),
+                    //   );
+                    // }
                   },
                   child: const Text('Cadastrar'),
                 ),
